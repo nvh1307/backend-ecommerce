@@ -1,6 +1,6 @@
-import { UserService } from "src/user/user/user.service";
+import { UserService } from "src/user/user.service";
 import { JwtService } from '@nestjs/jwt';
-import { UserEntity } from "src/user/user.entity/user.entity";
+import { UserEntity } from "src/entities/user/user.entity";
 
 export class AuthService{
   constructor(
