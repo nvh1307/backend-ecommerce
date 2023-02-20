@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
-import { Film } from "./film.entity";
+import { Film } from "../entities/film/film.entity";
 
 @Injectable()
 export class FilmService{
@@ -19,15 +19,15 @@ export class FilmService{
   }
 
   async findOne(id:number):Promise<Film>{
-    return await this.filmRepo.findOne(id)
+    return await this.filmRepo.findOne({where:{id:id}})
   }
 
   async update(id:number, film:Partial<Film>):Promise<Film>{
-    await this.filmRepository.update(id, film);
-    return await this.filmRepository.findOne(id);
+    await this.filmRepo.update(id, film);
+    return await this.filmRepo.findOne({where:{id:id}});
   }
 
-  async delete(id:number):Promise<Film>{
-    return await this.filmRepo.delete(id)
-  }
+  // async deleteFilm(id:number):Promise<Film>{
+  //   return await this.filmRepo.delete(id);
+  // }
 }

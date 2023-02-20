@@ -1,0 +1,43 @@
+[
+    {
+      "name": "default",
+      "type": "mysql",
+      "host": "127.0.0.1",
+      "port": 33061,
+      "username": "root",
+      "password": "test",
+      "database": "tconnect",
+      "entities": [
+        "src/entities/**/*.entity{.ts,.js}"
+      ],
+      "migrations": [
+        "src/migrations/*.ts",
+        "dist/migrations/*{.ts,.js}"
+      ],
+      "cli": {
+        "migrationsDir": "src/migrations"
+      },
+      "synchronize": true
+    },
+    {
+      "name": "docker",
+      "type": "mysql",
+      "host": "mydb",
+      "port": 3306,
+      "username": "root",
+      "password": "test",
+      "database": "tconnect",
+      "entities": [
+        "src/entities/**/*.entity{.ts,.js}"
+      ],
+      "migrations": [
+        "src/migrations/*.ts",
+        "dist/migrations/*{.ts,.js}"
+      ],
+      "cli": {
+        "migrationsDir": "src/migrations"
+      },
+      "synchronize": true
+    }
+  ]
+  
